@@ -6,7 +6,7 @@ namespace Docker.DotNet.Models
     public class SecretReference // (swarm.SecretReference)
     {
         [DataMember(Name = "File", EmitDefaultValue = false)]
-        public SecretReferenceFileTarget File { get; set; }
+        public SecretAndConfigReferenceFileTarget File { get; set; }
 
         [DataMember(Name = "SecretID", EmitDefaultValue = false)]
         public string SecretID { get; set; }

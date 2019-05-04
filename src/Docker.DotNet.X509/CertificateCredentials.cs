@@ -1,11 +1,10 @@
-﻿#if !NETSTANDARD1_6
-using System.Net;
-#endif
+﻿using System.Net;
 
 using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.Net.Http.Client;
+using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using Docker.DotNet;
 
 namespace Docker.DotNet.X509
 {

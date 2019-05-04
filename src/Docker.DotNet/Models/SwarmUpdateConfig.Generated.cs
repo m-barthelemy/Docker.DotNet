@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 namespace Docker.DotNet.Models
 {
     [DataContract]
-    public class SwarmUpdateConfig // (swarm.UpdateConfig)
+    public class SwarmUpdateRollbackConfig // (swarm.UpdateConfig)
     {
         [DataMember(Name = "Parallelism", EmitDefaultValue = false)]
         public ulong Parallelism { get; set; }

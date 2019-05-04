@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <PackageId>Docker.DotNet</PackageId>
+    <PackageId>Cloud.Docker.DotNet</PackageId>
     <Description>Docker.DotNet is a library that allows you to interact with the Docker Remote API programmatically with fully asynchronous, non-blocking and object-oriented code in your .NET applications.</Description>
     <TargetFrameworks>net45;net46;netstandard1.6;netstandard2.0</TargetFrameworks>
     <AssemblyName>Docker.DotNet</AssemblyName>
@@ -13,6 +13,8 @@
     <RepositoryUrl>https://github.com/Microsoft/Docker.DotNet</RepositoryUrl>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
     <VersionPrefix>3.125.3</VersionPrefix>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(VersionSuffix)' != ''">
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>

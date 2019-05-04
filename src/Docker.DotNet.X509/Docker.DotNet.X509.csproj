@@ -13,6 +13,7 @@
     <RepositoryUrl>https://github.com/Microsoft/Docker.DotNet/tree/master/Docker.DotNet</RepositoryUrl>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
     <VersionPrefix>3.125.3</VersionPrefix>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(VersionSuffix)' != ''">
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>

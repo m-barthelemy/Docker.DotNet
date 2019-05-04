@@ -2,8 +2,9 @@ using System.Runtime.Serialization;
 
 namespace Docker.DotNet.Models
 {
+    //* v1.39 checked 2019/05/04
     [DataContract]
-    public class SecretReferenceFileTarget // (swarm.SecretReferenceFileTarget)
+    public class SecretAndConfigReferenceFileTarget // (swarm.SecretReferenceFileTarget)
     {
         [DataMember(Name = "Name", EmitDefaultValue = false)]
         public string Name { get; set; }

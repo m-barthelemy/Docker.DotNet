@@ -3,11 +3,22 @@ using System.Runtime.Serialization;
 
 namespace Docker.DotNet.Models
 {
+    //* v1.39 checked 2019/05/04
     [DataContract]
     public class TaskSpec // (swarm.TaskSpec)
     {
         [DataMember(Name = "ContainerSpec", EmitDefaultValue = false)]
         public ContainerSpec ContainerSpec { get; set; }
+
+        /// <summary>
+        /// Plugin spec for the service. (Experimental release only.)
+        /// </summary>
+        // TODO: Implement
+        //[DataMember(Name = "PluginSpec", EmitDefaultValue = false)]
+        //public PluginSpec PluginSpec { get; set; }
+
+        [DataMember(Name = "NetworkAttachmentSpec", EmitDefaultValue = false)]
+        public NetworkAttachmentSpec NetworkAttachmentSpec { get; set; }
 
         [DataMember(Name = "Resources", EmitDefaultValue = false)]
         public ResourceRequirements Resources { get; set; }
@@ -18,13 +29,26 @@ namespace Docker.DotNet.Models
         [DataMember(Name = "Placement", EmitDefaultValue = false)]
         public Placement Placement { get; set; }
 
+        /// <summary>
+        /// A counter that triggers an update even if no relevant parameters have been changed.
+        /// </summary>
+        [DataMember(Name = "ForceUpdate", EmitDefaultValue = false)]
+        public ulong ForceUpdate { get; set; }
+
+        /// <summary>
+        /// Runtime is the type of runtime specified for the task executor.
+        /// </summary>
+        [DataMember(Name = "Runtime", EmitDefaultValue = false)]
+        public string Runtime { get; set; }
+
         [DataMember(Name = "Networks", EmitDefaultValue = false)]
         public IList<NetworkAttachmentConfig> Networks { get; set; }
 
+        /// <summary>
+        /// Specifies the log driver to use for tasks created from this spec. 
+        /// If not present, the default one for the swarm will be used, finally falling back to the engine default if not specified.
+        /// </summary>
         [DataMember(Name = "LogDriver", EmitDefaultValue = false)]
         public SwarmDriver LogDriver { get; set; }
-
-        [DataMember(Name = "ForceUpdate", EmitDefaultValue = false)]
-        public ulong ForceUpdate { get; set; }
     }
 }

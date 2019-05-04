@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Docker.DotNet.Models
 {
+    //* v1.39 checked 2019/05/04
     [DataContract]
     public class ServiceSpec // (swarm.ServiceSpec)
     {
@@ -32,7 +33,10 @@ namespace Docker.DotNet.Models
         public ServiceMode Mode { get; set; }
 
         [DataMember(Name = "UpdateConfig", EmitDefaultValue = false)]
-        public SwarmUpdateConfig UpdateConfig { get; set; }
+        public SwarmUpdateRollbackConfig UpdateConfig { get; set; }
+
+        [DataMember(Name = "RollbackConfig", EmitDefaultValue = false)]
+        public SwarmUpdateRollbackConfig RollbackConfig { get; set; }
 
         [DataMember(Name = "Networks", EmitDefaultValue = false)]
         public IList<NetworkAttachmentConfig> Networks { get; set; }

@@ -10,7 +10,6 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Docker.DotNet.BasicAuth\Docker.DotNet.BasicAuth.csproj" />
     <ProjectReference Include="..\..\src\Docker.DotNet.X509\Docker.DotNet.X509.csproj" />
     <ProjectReference Include="..\..\src\Docker.DotNet\Docker.DotNet.csproj" />
   </ItemGroup>
