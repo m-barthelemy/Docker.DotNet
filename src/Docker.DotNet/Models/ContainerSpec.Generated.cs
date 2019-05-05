@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Docker.DotNet.Models
 {
-    //* v1.39 checked 2019/05/04
+    //* v1.39 checked 2019/05/05
     [DataContract]
     public class ContainerSpec // (swarm.ContainerSpec)
     {
@@ -138,6 +138,13 @@ namespace Docker.DotNet.Models
         /// </summary>
         [DataMember(Name = "Isolation", EmitDefaultValue = false)]
         public string Isolation { get; set; }
+
+        /// <summary>
+        /// Run an init inside the container that forwards signals and reaps processes. 
+        /// If <see langword="null"/>, the default (as configured on the daemon) is used.
+        /// </summary>
+        [DataMember(Name = "Init", EmitDefaultValue = false)]
+        public bool? Init { get; set; }
 
     }
 }

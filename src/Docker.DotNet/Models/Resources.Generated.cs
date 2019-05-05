@@ -57,6 +57,9 @@ namespace Docker.DotNet.Models
         [DataMember(Name = "Devices", EmitDefaultValue = false)]
         public IList<DeviceMapping> Devices { get; set; }
 
+        [DataMember(Name = "DeviceCgroupRules", EmitDefaultValue = false)]
+        public IList<string> DeviceCgroupRules { get; set; }
+
         [DataMember(Name = "DiskQuota", EmitDefaultValue = false)]
         public long DiskQuota { get; set; }
 

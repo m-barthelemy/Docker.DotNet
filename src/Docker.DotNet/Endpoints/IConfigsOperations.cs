@@ -25,7 +25,7 @@ namespace Docker.DotNet
         /// 409 - Name conflicts with an existing object.
         /// 500 - Server error.
         /// </remarks>
-        Task<SecretCreateResponse> CreateAsync(ConfigSpec body, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SecretOrConfigCreateResponse> CreateAsync(ConfigSpec body, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Inspect a config

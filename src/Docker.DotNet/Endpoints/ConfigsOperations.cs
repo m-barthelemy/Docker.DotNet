@@ -22,7 +22,7 @@ namespace Docker.DotNet
             return this._client.JsonSerializer.DeserializeObject<IList<SwarmConfig>>(response.Body);
         }
 
-        async Task<SecretCreateResponse> IConfigsOperations.CreateAsync(ConfigSpec body, CancellationToken cancellationToken)
+        async Task<SecretOrConfigCreateResponse> IConfigsOperations.CreateAsync(ConfigSpec body, CancellationToken cancellationToken)
         {
             if (body == null)
             {
@@ -31,7 +31,7 @@ namespace Docker.DotNet
 
             var data = new JsonRequestContent<ConfigSpec>(body, this._client.JsonSerializer);
             var response = await this._client.MakeRequestAsync(this._client.NoErrorHandlers, HttpMethod.Post, "configs/create", null, data, cancellationToken).ConfigureAwait(false);
-            return this._client.JsonSerializer.DeserializeObject<SecretCreateResponse>(response.Body);
+            return this._client.JsonSerializer.DeserializeObject<SecretOrConfigCreateResponse>(response.Body);
         }
 
         async Task<SwarmConfig> IConfigsOperations.InspectAsync(string id, CancellationToken cancellationToken)
